@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@model Summoner
+
+
+@using (Html.BeginForm("Search", "Home", "Get"))
+{
+
+    <label asp-for="SummonerName" class="control-label">Search for a Summoner Name</label>
+    <input type="text" name="SummonerName" class="form-control" value="" />
+
+    <input type="submit" value="Search" class="btn btn-primary" />
+}
+
+
