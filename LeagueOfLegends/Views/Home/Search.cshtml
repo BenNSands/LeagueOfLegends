@@ -1,7 +1,19 @@
 ﻿@model Summoner
 
-//make this look like view product from the asp.net projec we did
+<h3>@Model.SummonerName</h3>
 
-<table>
+<table class="table">
+    <tr>
+        <th>Wins</th>
+        <th>Losses</th>
+        <th>Rank</th>
+    </tr>
+    <tr>
+        <td>@Model.Wins</td>
+        <td>@Model.Losses</td>
+        <td>@Model.Tier @Model.Rank</td>
+    </tr>
 
 </table>
+
+<div style="display: block"></div>
