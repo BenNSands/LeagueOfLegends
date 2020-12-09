@@ -31,7 +31,9 @@ namespace LeagueOfLegends
 
         public static Summoner GetPlayerStats(this Summoner summoner)
         {
-            var url = $"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{summoner.SummonerID}?api_key=RGAPI-ee6ef0c5-f0f8-4aee-9bcf-1746760b98db";
+            var api = System.IO.File.ReadAllText("api2.txt");
+
+            var url = $"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{summoner.SummonerID}?api_key={api}";
 
             var client = new RestClient(url);
             var request = new RestRequest(Method.GET);
