@@ -12,7 +12,9 @@ namespace LeagueOfLegends
     {
         public static Summoner GetSummonerID(string summonerName)
         {
-            var url = $"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}?api_key=RGAPI-ee6ef0c5-f0f8-4aee-9bcf-1746760b98db";
+            var api = System.IO.File.ReadAllText("api.txt");
+            
+            var url = $"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}?api_key={api}";
             
             var client = new RestClient(url);
             var request = new RestRequest(Method.GET);
