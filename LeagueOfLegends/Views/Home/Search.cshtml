@@ -1,17 +1,37 @@
 ﻿@model Summoner
 
-<h3>@Model.SummonerName</h3>
+<h1>@Model.SummonerName</h1>
 
+<h4>Ranked Solo/Duo</h4>
 <table class="table">
     <tr>
         <th>Wins</th>
         <th>Losses</th>
         <th>Rank</th>
+        <th>LP</th>
     </tr>
     <tr>
-        <td>@Model.Wins</td>
-        <td>@Model.Losses</td>
-        <td>@Model.Tier @Model.Rank</td>
+        <td>@Model.SDWins</td>
+        <td>@Model.SDLosses</td>
+        <td>@Model.SDTier @Model.SDRank</td>
+        <td>@Model.SDLP</td>
+    </tr>
+
+</table>
+
+<h4>Ranked Flex</h4>
+<table class="table">
+    <tr>
+        <th>Wins</th>
+        <th>Losses</th>
+        <th>Rank</th>
+        <th>LP</th>
+    </tr>
+    <tr>
+        <td>@Model.FWins</td>
+        <td>@Model.FLosses</td>
+        <td>@Model.FTier @Model.FRank</td>
+        <td>@Model.FLP</td>
     </tr>
 
 </table>

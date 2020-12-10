@@ -44,10 +44,17 @@ namespace LeagueOfLegends
             var data = JArray.Parse(response.Content);
 
             summoner.SummonerName = (string)data[0]["summonerName"];
-            summoner.Wins = (int)data[0]["wins"];
-            summoner.Losses = (int)data[0]["losses"];
-            summoner.Tier = (string)data[0]["tier"];
-            summoner.Rank = (string)data[0]["rank"];
+            summoner.FWins = (int)data[0]["wins"];
+            summoner.FLosses = (int)data[0]["losses"];
+            summoner.FTier = (string)data[0]["tier"];
+            summoner.FRank = (string)data[0]["rank"];
+            summoner.FLP = (int)data[0]["leaguePoints"];
+
+            summoner.SDWins = (int)data[1]["wins"];
+            summoner.SDLosses = (int)data[1]["losses"];
+            summoner.SDTier = (string)data[1]["tier"];
+            summoner.SDRank = (string)data[1]["rank"];
+            summoner.SDLP = (int)data[1]["leaguePoints"];
 
             return summoner;
         }
