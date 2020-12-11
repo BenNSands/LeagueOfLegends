@@ -57,6 +57,7 @@ namespace LeagueOfLegends
 
                 if (obj["queueType"].ToString() == "RANKED_SOLO_5x5")
                 {
+                    summoner.SummonerName = (string)obj["summonerName"];
                     summoner.SDWins = (int)   obj["wins"];
                     summoner.SDLosses = (int) obj["losses"];
                     summoner.SDTier = (string)obj["tier"];
@@ -64,39 +65,6 @@ namespace LeagueOfLegends
                     summoner.SDLP = (int)     obj["leaguePoints"];
                 }
             }
-
-            //if (data[0]["queueType"].ToString() == "RANKED_FLEX_SR")
-            //{
-            //    summoner.SummonerName = (string)data[0]["summonerName"];
-            //    summoner.FWins = (int)data[0]["wins"];
-            //    summoner.FLosses = (int)data[0]["losses"];
-            //    summoner.FTier = (string)data[0]["tier"];
-            //    summoner.FRank = (string)data[0]["rank"];
-            //    summoner.FLP = (int)data[0]["leaguePoints"];
-
-            //    summoner.SDWins = (int)data[1]["wins"];
-            //    summoner.SDLosses = (int)data[1]["losses"];
-            //    summoner.SDTier = (string)data[1]["tier"];
-            //    summoner.SDRank = (string)data[1]["rank"];
-            //    summoner.SDLP = (int)data[1]["leaguePoints"];
-            //}
-            //else
-            //{
-            //    summoner.SummonerName = (string)data[1]["summonerName"];
-            //    summoner.FWins = (int)data[1]["wins"];
-            //    summoner.FLosses = (int)data[1]["losses"];
-            //    summoner.FTier = (string)data[1]["tier"];
-            //    summoner.FRank = (string)data[1]["rank"];
-            //    summoner.FLP = (int)data[1]["leaguePoints"];
-
-            //    summoner.SDWins = (int)data[0]["wins"];
-            //    summoner.SDLosses = (int)data[0]["losses"];
-            //    summoner.SDTier = (string)data[0]["tier"];
-            //    summoner.SDRank = (string)data[0]["rank"];
-            //    summoner.SDLP = (int)data[0]["leaguePoints"];
-            //}
-
-
 
             return summoner;
         }

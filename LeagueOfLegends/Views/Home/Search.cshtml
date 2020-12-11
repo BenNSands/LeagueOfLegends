@@ -5,15 +5,15 @@
 <h4>Ranked Solo/Duo</h4>
 <table class="table">
     <tr>
-        <th>Wins</th>
-        <th>Losses</th>
+        <th style="color:green">Wins</th>
+        <th style="color:red">Losses</th>
         <th>Rank</th>
         <th>LP</th>
     </tr>
     <tr>
-        <td>@Model.SDWins</td>
-        <td>@Model.SDLosses</td>
-        <td>@Model.SDTier @Model.SDRank</td>
+        <td style="color:green">@Model.SDWins</td>
+        <td style="color:red">@Model.SDLosses</td>
+        <td style="color:@Model.GetSDCSSColor()">@Model.SDTier @Model.SDRank</td>
         <td>@Model.SDLP</td>
     </tr>
 
@@ -22,15 +22,15 @@
 <h4>Ranked Flex</h4>
 <table class="table">
     <tr>
-        <th>Wins</th>
-        <th>Losses</th>
+        <th style="color:green">Wins</th>
+        <th style="color:red">Losses</th>
         <th>Rank</th>
         <th>LP</th>
     </tr>
     <tr>
-        <td>@Model.FWins</td>
-        <td>@Model.FLosses</td>
-        <td>@Model.FTier @Model.FRank</td>
+        <td style="color:green">@Model.FWins</td>
+        <td style="color:red">@Model.FLosses</td>
+        <td style="color:@Model.GetFCSSColor()">@Model.FTier @Model.FRank</td>
         <td>@Model.FLP</td>
     </tr>
 
