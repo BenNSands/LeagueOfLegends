@@ -23,15 +23,15 @@ namespace LeagueOfLegends.Models
 
         public string SummonerID { get; set; }
         public string SummonerName { get; set; }
-        public int FWins { get; set; }
-        public int FLosses { get; set; }
+        public int FWins { get; set; } = 0;
+        public int FLosses { get; set; } = 0;
         public string FTier { get; set; }
-        public string FRank { get; set; }
-        public int FLP { get; set; }
-        public int SDWins { get; set; }
-        public int SDLosses { get; set; }
+        public string FRank { get; set; } = "none";
+        public int FLP { get; set; } = 0;
+        public int SDWins { get; set; } = 0;
+        public int SDLosses { get; set; } = 0;
         public string SDTier { get; set; }
         public string SDRank { get; set; }
-        public int SDLP { get; set; }
+        public int SDLP { get; set; } = 0;
     }
 }
