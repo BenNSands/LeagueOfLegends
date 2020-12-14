@@ -1,37 +1,37 @@
 ﻿@model Summoner
 
-<h1>@Model.SummonerName</h1>
-
-<h4>Ranked Solo/Duo</h4>
+<h1 style="color:white">@Model.SummonerName</h1>
+<link rel="stylesheet" href="~/css/Searchpage.css">
+<h4 style="color:white">Ranked Solo/Duo</h4>
 <table class="table">
     <tr>
         <th style="color:green">Wins</th>
         <th style="color:red">Losses</th>
-        <th>Rank</th>
-        <th>LP</th>
+        <th style="color:white">Rank</th>
+        <th style="color:white">LP</th>
     </tr>
     <tr>
         <td style="color:green">@Model.SDWins</td>
         <td style="color:red">@Model.SDLosses</td>
         <td style="color:@Model.GetSDCSSColor()">@Model.SDTier @Model.SDRank</td>
-        <td>@Model.SDLP</td>
+        <td style="color:white">@Model.SDLP</td>
     </tr>
 
 </table>
 
-<h4>Ranked Flex</h4>
+<h4 style="color:white">Ranked Flex</h4>
 <table class="table">
     <tr>
         <th style="color:green">Wins</th>
         <th style="color:red">Losses</th>
-        <th>Rank</th>
-        <th>LP</th>
+        <th style="color:white">Rank</th>
+        <th style="color:white">LP</th>
     </tr>
     <tr>
         <td style="color:green">@Model.FWins</td>
         <td style="color:red">@Model.FLosses</td>
         <td style="color:@Model.GetFCSSColor()">@Model.FTier @Model.FRank</td>
-        <td>@Model.FLP</td>
+        <td style="color:white">@Model.FLP</td>
     </tr>
 
 </table>

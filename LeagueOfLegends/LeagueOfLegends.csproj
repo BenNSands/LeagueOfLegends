@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <None Include="wwwroot\css\Searchbar.css" />
+    <None Include="wwwroot\css\Searchpage.css" />
   </ItemGroup>
 
   <ItemGroup>
