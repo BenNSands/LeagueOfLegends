@@ -7,20 +7,6 @@ namespace LeagueOfLegends.Models
 {
     public class Summoner
     {
-        /* "leagueId": "f614ff48-e79d-4f78-af76-c8a733533a17",
-        "queueType": "RANKED_SOLO_5x5",
-        "tier": "GOLD",
-        "rank": "III",
-        "summonerId": "sr4qsPjllF0-a7HrxdO85c4Lp2VDKEHoDwQvVUTTRjzbM6k",
-        "summonerName": "Dopas Son",
-        "leaguePoints": 47,
-        "wins": 318,
-        "losses": 327,
-        "veteran": false,
-        "inactive": false,
-        "freshBlood": false,
-        "hotStreak": false*/
-
         public string SummonerID { get; set; }
         public string SummonerName { get; set; }
         public int FWins { get; set; } = 0;
@@ -84,8 +70,62 @@ namespace LeagueOfLegends.Models
                 default:
                     return "#cccccc";
             }
+            
         }
-       
-        
+        public string GetFEmblem()
+        {
+            switch (FTier)
+            {
+                case "IRON":
+                    return "https://opgg-static.akamaized.net/images/medals/iron_1.png?image=q_auto:best&v=1";
+                case "BRONZE":
+                    return "https://opgg-static.akamaized.net/images/medals/bronze_1.png?image=q_auto:best&v=1";
+                case "SILVER":
+                    return "https://opgg-static.akamaized.net/images/medals/silver_1.png?image=q_auto:best&v=1";
+                case "GOLD":
+                    return "https://opgg-static.akamaized.net/images/medals/gold_1.png?image=q_auto:best&v=1";
+                case "PLATINUM":
+                    return "https://opgg-static.akamaized.net/images/medals/platinum_1.png?image=q_auto:best&v=1";
+                case "DIAMOND":
+                    return "https://opgg-static.akamaized.net/images/medals/diamond_1.png?image=q_auto:best&v=1";
+                case "MASTER":
+                    return "https://opgg-static.akamaized.net/images/medals/master_1.png?image=q_auto:best&v=1";
+                case "GRANDMASTER":
+                    return "https://opgg-static.akamaized.net/images/medals/grandmaster_1.png?image=q_auto:best&v=1";
+                case "CHALLENGER":
+                    return "https://opgg-static.akamaized.net/images/medals/challenger_1.png?image=q_auto:best&v=1";
+                default:
+                    return "https://opgg-static.akamaized.net/images/medals/default.png";
+            }
+
+        }
+        public string GetSDEmblem()
+        {
+            switch (SDTier)
+            {
+                case "IRON":
+                    return "https://opgg-static.akamaized.net/images/medals/iron_1.png?image=q_auto:best&v=1";
+                case "BRONZE":
+                    return "https://opgg-static.akamaized.net/images/medals/bronze_1.png?image=q_auto:best&v=1";
+                case "SILVER":
+                    return "https://opgg-static.akamaized.net/images/medals/silver_1.png?image=q_auto:best&v=1";
+                case "GOLD":
+                    return "https://opgg-static.akamaized.net/images/medals/gold_1.png?image=q_auto:best&v=1";
+                case "PLATINUM":
+                    return "https://opgg-static.akamaized.net/images/medals/platinum_1.png?image=q_auto:best&v=1";
+                case "DIAMOND":
+                    return "https://opgg-static.akamaized.net/images/medals/diamond_1.png?image=q_auto:best&v=1";
+                case "MASTER":
+                    return "https://opgg-static.akamaized.net/images/medals/master_1.png?image=q_auto:best&v=1";
+                case "GRANDMASTER":
+                    return "https://opgg-static.akamaized.net/images/medals/grandmaster_1.png?image=q_auto:best&v=1";
+                case "CHALLENGER":
+                    return "https://opgg-static.akamaized.net/images/medals/challenger_1.png?image=q_auto:best&v=1";
+                default:
+                    return "https://opgg-static.akamaized.net/images/medals/default.png";
+            }
+
+        }
+        public int MostPlayed { get; set; }
     }
 }

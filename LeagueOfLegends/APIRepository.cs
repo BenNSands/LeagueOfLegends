@@ -37,8 +37,6 @@ namespace LeagueOfLegends
 
             var client = new RestClient(url);
             var request = new RestRequest(Method.GET);
-            //request.AddHeader("x-rapidapi-key", "75659707a4mshbe175a73468d4e2p1b9494jsn356396c32494");
-            //request.AddHeader("x-rapidapi-host", "amazon-product-reviews-keywords.p.rapidapi.com");
             IRestResponse response = client.Execute(request);
 
             var data = JArray.Parse(response.Content);
@@ -67,6 +65,49 @@ namespace LeagueOfLegends
             }
 
             return summoner;
+        }
+
+        public static Summoner GetMostPlayed(this Summoner summoner)
+        {
+            var api = System.IO.File.ReadAllText("api2.txt");
+
+            var url = $"https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/{summoner.SummonerID}?api_key={api}";
+
+            var client = new RestClient(url);
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+
+            var data = JArray.Parse(response.Content);
+
+            summoner.MostPlayed = (int)data[0]["championId"];
+
+            return summoner;
+        }
+
+        public static string GetChampionImage(int championId)
+        {
+            var url = $"http://ddragon.leagueoflegends.com/cdn/10.25.1/data/en_US/champion.json";
+
+            var client = new RestClient(url);
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+
+            var data = JObject.Parse(response.Content).GetValue("data");
+
+            var id = "";
+            foreach(var obj in data)
+            {
+                foreach(var champion in obj)
+                {
+                    if ((int)champion["key"] == championId)
+                    {
+                        id = (string)champion["id"];
+                    }
+                }
+                
+            }
+
+            return $"https://opgg-static.akamaized.net/images/lol/champion/{id}.png?image=c_scale,q_auto,w_140&v=1607480996";
         }
     }
 }

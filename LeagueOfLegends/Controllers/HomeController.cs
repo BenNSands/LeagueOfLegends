@@ -29,6 +29,7 @@ namespace LeagueOfLegends.Controllers
         {
             player = APIRepository.GetSummonerID(player.SummonerName);
             APIRepository.GetPlayerStats(player);
+            APIRepository.GetMostPlayed(player);
 
             return View(player);
         }

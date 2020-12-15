@@ -2,36 +2,37 @@
 
 <h1 style="color:white">@Model.SummonerName</h1>
 <link rel="stylesheet" href="~/css/Searchpage.css">
-<h4 style="color:white">Ranked Solo/Duo</h4>
+<h4 style="color:white">Most Played Champion <img src="@APIRepository.GetChampionImage(Model.GetMostPlayed().MostPlayed)" style="width:80px;height:80px;"/></h4>
+<h4 style="color:white">Ranked Solo/Duo <img src="@Model.GetSDEmblem()" style="width:140px;height:140px;"></h4>
 <table class="table">
     <tr>
-        <th style="color:green">Wins</th>
-        <th style="color:red">Losses</th>
-        <th style="color:white">Rank</th>
-        <th style="color:white">LP</th>
+        <th style="color:green; width:25%;">Wins</th>
+        <th style="color:red; width:25%;">Losses</th>
+        <th style="color:white; width:25%;">Rank</th>
+        <th style="color:white; width:25%;">LP</th>
     </tr>
     <tr>
-        <td style="color:green">@Model.SDWins</td>
-        <td style="color:red">@Model.SDLosses</td>
-        <td style="color:@Model.GetSDCSSColor()">@Model.SDTier @Model.SDRank</td>
-        <td style="color:white">@Model.SDLP</td>
+        <td style="color:green; width:25%;">@Model.SDWins</td>
+        <td style="color:red; width:25%;">@Model.SDLosses</td>
+        <td style="color:@Model.GetSDCSSColor(); width:25%;">@Model.SDTier @Model.SDRank</td>
+        <td style="color:white; width:25%;">@Model.SDLP</td>
     </tr>
 
 </table>
 
-<h4 style="color:white">Ranked Flex</h4>
+<h4 style="color:white">Ranked Flex <img src="@Model.GetFEmblem()" style="width:140px;height:140px;"></h4>
 <table class="table">
     <tr>
-        <th style="color:green">Wins</th>
-        <th style="color:red">Losses</th>
-        <th style="color:white">Rank</th>
-        <th style="color:white">LP</th>
+        <th style="color:green; width:25%;">Wins</th>
+        <th style="color:red; width:25%;">Losses</th>
+        <th style="color:white; width:25%;">Rank</th>
+        <th style="color:white; width:25%;">LP</th>
     </tr>
     <tr>
-        <td style="color:green">@Model.FWins</td>
-        <td style="color:red">@Model.FLosses</td>
-        <td style="color:@Model.GetFCSSColor()">@Model.FTier @Model.FRank</td>
-        <td style="color:white">@Model.FLP</td>
+        <td style="color:green; width:25%;">@Model.FWins</td>
+        <td style="color:red; width:25%;">@Model.FLosses</td>
+        <td style="color:@Model.GetFCSSColor(); width:25%;">@Model.FTier @Model.FRank</td>
+        <td style="color:white; width:25%;">@Model.FLP</td>
     </tr>
 
 </table>
